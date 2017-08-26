@@ -1,0 +1,42 @@
+---
+homebrew_taps:
+  - caskroom/cask
+  - homebrew/dupes
+  - caskroom/versions
+  - caskroom/fonts
+
+homebrew_installed_packages:
+  - git
+  - zsh
+  - vim
+  - wget
+  - curl
+  - yarn
+  - dockutil
+
+homebrew_cask_appdir: /Applications
+
+homebrew_cask_apps:
+  # fonts
+  - font-source-code-pro
+  # apps
+  # - 1password
+  # - google-chrome
+  # - google-chrome-canary
+  # - firefox
+  # - firefoxdeveloperedition
+  # - sequel-pro
+  # - slack
+  # - sourcetree
+  # - vagrant
+  # - virtualbox
+  # - dropbox
+  # - iterm2
+  # - sketch
+  # - vlc
+  # - vscode
+  # - nvm
+  # - the-unarchiver
+  # - flux
+  # - alfred
+  # - transmission

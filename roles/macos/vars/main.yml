@@ -1,0 +1,121 @@
+---
+macos:
+  config:
+    # Expand save panel by default
+    - domain: NSGlobalDomain
+      key: NSNavPanelExpandedStateForSaveMode
+      value: -bool true
+
+    # Save to disk rather than iCloud by default
+    - domain: NSGlobalDomain
+      key: NSDocumentSaveNewDocumentsToCloud
+      value: -bool false
+
+    # Disable smart quotes
+    - domain: NSGlobalDomain
+      key: NSAutomaticQuoteSubstitutionEnabled
+      value: -bool false
+
+    # Disable smart dashes
+    - domain: NSGlobalDomain
+      key: NSAutomaticDashSubstitutionEnabled
+      value: -bool false
+
+    # Trackpad - enable two finger secondary click
+    - domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
+      key: TrackpadCornerSecondaryClick
+      value: -int 1
+
+    - domain: com.apple.driver.AppleBluetoothMultitouch.trackpad
+      key: TrackpadRightClick
+      value: -bool true
+
+    # Require password when awoken from screensaver
+    - domain: com.apple.screensaver
+      key: askForPassword
+      value: -int 1
+
+    # Require password immediately after screen lock
+    - domain: com.apple.screensaver
+      key: askForPasswordDelay
+      value: -int 0
+
+    # Save screenshots to the desktop
+    - domain: com.apple.screencapture
+      key: location
+      value: -string "${HOME}/Desktop"
+
+    # Save screenshots as .png
+    - domain: com.apple.screencapture
+      key: type
+      value: -string "png"
+
+    # Enable sub-pixel rendering for external displays
+    - domain: NSGlobalDomain
+      key: AppleFontSmoothing
+      value: -int 2
+
+    # Show external hard drives on desktop
+    - domain: com.apple.finder
+      key: ShowExternalHardDrivesOnDesktop
+      value: -bool true
+
+    # Show network drives on desktop
+    - domain: com.apple.finder
+      key: ShowMountedServersOnDesktop
+      value: -bool true
+
+    # Show removable drives on desktop
+    - domain: com.apple.finder
+      key: ShowRemovableMediaOnDesktop
+      value: -bool true
+
+    # Show the current folder by default in finder
+    - domain: com.apple.finder
+      key: FXDefaultSearchScope
+      value: -string "SCcf"
+
+    # Do not show a warning modal when changing file extension
+    - domain: com.apple.finder
+      key: FXEnableExtensionChangeWarning
+      value: -bool false
+
+    # Check for macOS updates daily
+    - domain: com.apple.SoftwareUpdate
+      key: ScheduleFrequency
+      value: -int 1
+
+    # Use list view in finder views
+    - domain: com.apple.finder
+      key: FXPreferredViewStyle
+      value: -string "Nlsv"
+
+    # Group by kind in finder views
+    - domain: com.apple.finder
+      key: FXPreferredGroupBy
+      value: -string "kind"
+
+    # Set dock icon size
+    - domain: com.apple.dock
+      key: tileSize
+      value: -int 36
+  
+    # Minimise windows into their dock icon
+    - domain: com.apple.dock
+      key: minimize-to-application
+      value: -bool true
+
+    # Show indicator lights in the dock
+    - domain: com.apple.dock
+      key: show-process-indicators
+      value: -bool true
+
+    # Only show scrollbars when scrolling
+    - domain: NSGlobalDomain
+      key: AppleShowScrollBars
+      value: -bool true
+
+    # Delete items from the Trash after 30 days
+    - domain: com.apple.finder
+      key: FXRemoveOldTrashItems
+      value: -bool true

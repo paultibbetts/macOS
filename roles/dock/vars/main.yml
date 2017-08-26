@@ -1,0 +1,38 @@
+---
+dock_default_apps:
+  - Launchpad
+  - Mail
+  - Safari
+  - Contacts
+  - Notes
+  - Reminders
+  - Maps
+  - Photos
+  - Messages
+  - FaceTime
+  - iTunes
+  - iBooks
+  - App Store
+  - System Preferences
+  - Calendar
+  - Siri
+
+dock_apps:
+  - name: Safari
+    path: "/Applications/Safari.app"
+    pos: 1
+  - name: Mail
+    path: "/Mail.app"
+    pos: 2
+  - name: Sequel Pro
+    path: "/Applications/Sequel Pro.app"
+    pos: 3
+  - name: SourceTree
+    path: "/Applications/SourceTree.app"
+    pos: 4
+  - name: Atom
+    path: "/Applications/Atom.app"
+    pos: 5
+  - name: Slack
+    path: "/Applications/Slack.app"
+    pos: 6
