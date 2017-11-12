@@ -35,7 +35,7 @@ macos:
           key: askForPassword
           value: -int 1
 
-        # Require password immediately after scren lock
+        # Require password immediately after screen lock
         - domain: com.apple.screensaver
           key: askForPasswordDelay
           value: -int 0
@@ -98,7 +98,7 @@ macos:
         # Set dock icon size
         - domain: com.apple.dock
           key: tilesize
-          value: -int 36
+          value: -int 42
 
         # Minimize windows into their dock icon
         - domain: com.apple.dock

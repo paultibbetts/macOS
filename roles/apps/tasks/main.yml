@@ -1,0 +1,6 @@
+---
+- name: Install VSCode extensions
+  command: "/usr/local/bin/code --install-extension '{{ item }}'"
+  with_items: "{{vscode_extensions}}"
+  register: vscode_result
+  changed_when: "'already installed' not in vscode_result.stdout"

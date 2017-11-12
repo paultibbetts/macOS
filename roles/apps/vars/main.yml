@@ -1,18 +1,26 @@
 ---
 homebrew_taps:
   - caskroom/cask
-  - homebrew/dupes
   - caskroom/versions
   - caskroom/fonts
 
 homebrew_installed_packages:
   - git
   - zsh
+  - zsh-completions
   - vim
   - wget
   - curl
   - yarn
   - dockutil
+  - nvm
+  - coreutils			
+  - packer
+  - terraform
+  - python
+  - python3
+  - thefuck
+  - tree
 
 homebrew_cask_appdir: /Applications
 
@@ -20,23 +28,60 @@ homebrew_cask_apps:
   # fonts
   - font-source-code-pro
   # apps
-  # - 1password
-  # - google-chrome
-  # - google-chrome-canary
-  # - firefox
-  # - firefoxdeveloperedition
-  # - sequel-pro
-  # - slack
-  # - sourcetree
-  # - vagrant
-  # - virtualbox
-  # - dropbox
-  # - iterm2
-  # - sketch
-  # - vlc
-  # - vscode
-  # - nvm
-  # - the-unarchiver
-  # - flux
-  # - alfred
-  # - transmission
+  - dropbox
+  - filezilla
+  - firefox
+  - firefoxdeveloperedition
+  - flux
+  - iterm2
+  - postman
+  - rescuetime
+  - sequel-pro
+  - sip
+  - sketch
+  - sketch-toolbox
+  - slack
+  - sourcetree
+  - transmission
+  - vagrant
+  - virtualbox
+  - visual-studio-code
+  - vlc
+  # quick look
+  - betterzipql 
+  - qlcolorcode 
+  - qlimagesize 
+  - qlmarkdown 
+  - qlprettypatch 
+  - qlstephen 
+  - qlvideo
+  - quicklook-csv 
+  - quicklook-json 
+  - suspicious-package 
+  - webpquicklook 
+
+mas_installed_apps:
+  - { id: 405399194, name: "Kindle"}
+  - { id: 405843582, name: "Alfred"}
+  - { id: 406056744, name: "Evernote"}
+  - { id: 409183694, name: "Keynote"}
+  - { id: 409201541, name: "Pages"}
+  - { id: 409203825, name: "Numbers"}
+  - { id: 410628904, name: "Wunderlist"}
+  - { id: 411246225, name: "Caffeine"}
+  - { id: 425424353, name: "The Unarchiver"}
+  - { id: 443987910, name: "1Password"}
+  - { id: 568494494, name: "Pocket"}
+
+mas_upgrade_all_apps: yes
+
+vscode_extensions:
+  - dracula-theme.theme-dracula
+  - mauve.terraform
+  - neilbrayfield.php-docblocker
+  - octref.vetur
+  - robertohuertasm.vscode-icons
+  - suyogsoti.todo-show
+  - Tyriar.sort-lines
+  - vscodevim.vim
+  - wwm.better-align

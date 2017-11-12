@@ -16,23 +16,39 @@ dock_default_apps:
   - System Preferences
   - Calendar
   - Siri
+  - Pages
+  - Numbers
+  - Keynote
 
 dock_apps:
   - name: Safari
     path: "/Applications/Safari.app"
     pos: 1
   - name: Mail
-    path: "/Mail.app"
+    path: "/Applications/Mail.app"
     pos: 2
-  - name: Sequel Pro
-    path: "/Applications/Sequel Pro.app"
+  - name: Calendar
+    path: "/Applications/Calendar.app"
     pos: 3
-  - name: SourceTree
-    path: "/Applications/SourceTree.app"
-    pos: 4
-  - name: Atom
-    path: "/Applications/Atom.app"
-    pos: 5
   - name: Slack
     path: "/Applications/Slack.app"
+    pos: 4
+  - name: Sequel Pro
+    path: "/Applications/Sequel Pro.app"
+    pos: 5
+  - name: SourceTree
+    path: "/Applications/SourceTree.app"
     pos: 6
+  - name: Google Chrome Canary
+    path: "/Applications/Google Chrome Canary.app"
+    pos: 7
+  - name: FirefoxDeveloperEdition
+    path: "/Applications/FirefoxDeveloperEdition.app"
+    pos: 8
+  - name: iTerm
+    path: "/Applications/iTerm.app"
+    pos: 9
+  - name: Visual Studio Code
+    path: "/Applications/Visual Studio Code.app"
+    pos: 10
+

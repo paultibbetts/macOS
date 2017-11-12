@@ -6,27 +6,27 @@
   become_user: "{{install_user}}"
   notify: Restart macOS services
 
-#- name: Enable macOS firewall
-#  command: defaults write /Library/Preferences/com.apple.alf globalstate -int 1
-#  become: true
-#  become_user: "root"
+- name: Enable macOS firewall
+  command: defaults write /Library/Preferences/com.apple.alf globalstate -int 1
+  become: true
+  become_user: "root"
 
-#- name: Disable guest user
-#  command: defaults write /Library/Preferences/com.apple.AppleFileServer guestAccess -bool NO
-#  become: true
-#  become_user: "root"
+- name: Disable guest user
+  command: defaults write /Library/Preferences/com.apple.AppleFileServer guestAccess -bool NO
+  become: true
+  become_user: "root"
 
-#- name: Disable guest SMB sharing
-#  command: defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server AllowGuestAccess -bool NO
-#  become: true
-#  become_user: "root"
+- name: Disable guest SMB sharing
+  command: defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server AllowGuestAccess -bool NO
+  become: true
+  become_user: "root"
 
-#- name: Is FileVault enabled?
-#  command: fdesetup status
-#  register: isFileVaultEnabled
+- name: Is FileVault enabled?
+  command: fdesetup status
+  register: isFileVaultEnabled
 
-#- name: Enable FileVault
-#  command: fdsetup enable -user={{install_user}}
-#  become: true
-#  become_user: "root"
-#  when: isFileVaultEnabled.stdout.find("FileVault is Off.") != -1
+- name: Enable FileVault
+  command: fdsetup enable -user={{install_user}}
+  become: true
+  become_user: "root"
+  when: isFileVaultEnabled.stdout.find("FileVault is Off.") != -1

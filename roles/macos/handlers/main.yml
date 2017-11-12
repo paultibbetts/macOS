@@ -3,6 +3,5 @@
   command: killall {{item}}
   ignore_errors: yes
   with_items:
-    - "Dock"
     - "Finder"
     - "SystemUIServer"
