@@ -33,22 +33,25 @@ dock_apps:
   - name: Slack
     path: "/Applications/Slack.app"
     pos: 4
+  - name: Messages
+    path: "/Applications/Messages.app"
+    pos: 5
   - name: Sequel Pro
     path: "/Applications/Sequel Pro.app"
-    pos: 5
+    pos: 6
   - name: SourceTree
     path: "/Applications/SourceTree.app"
-    pos: 6
+    pos: 7
   - name: Google Chrome Canary
     path: "/Applications/Google Chrome Canary.app"
-    pos: 7
+    pos: 8
   - name: FirefoxDeveloperEdition
     path: "/Applications/FirefoxDeveloperEdition.app"
-    pos: 8
+    pos: 9
   - name: iTerm
     path: "/Applications/iTerm.app"
-    pos: 9
+    pos: 10
   - name: Visual Studio Code
     path: "/Applications/Visual Studio Code.app"
-    pos: 10
+    pos: 11
 
