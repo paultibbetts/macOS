@@ -75,13 +75,28 @@ mas_installed_apps:
 
 mas_upgrade_all_apps: yes
 
+# code --list-extensions
 vscode_extensions:
+  - bmewburn.vscode-intelephen
+  - bmewburn.vscode-intelephense-client
+  - calebporzio.better-phpunit
+  - christian-kohler.npm-intellisense
+  - cjhowe7.laravel-blade
+  - dbaeumer.vscode-eslint
+  - dbaeumer.vscode-eslint
   - dracula-theme.theme-dracula
+  - ecmel.vscode-html-css
+  - HookyQR.beautify
+  - junstyle.php-cs-fixer
   - mauve.terraform
   - neilbrayfield.php-docblocker
   - octref.vetur
+  - patbenatar.advanced-new-file
   - robertohuertasm.vscode-icons
+  - ryannaddy.laravel-artisan
+  - sleistner.vscode-fileutils
   - suyogsoti.todo-show
   - Tyriar.sort-lines
   - vscodevim.vim
+  - wix.vscode-import-cost
   - wwm.better-align
