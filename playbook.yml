@@ -1,6 +1,6 @@
 ---
 - hosts: localhost
   roles: 
-    - dock
     - { role: settings, tags: [ settings ] }
     - { role: apps, tags: [ apps ] }
+    - { role: dock, tags: [ dock ] }
