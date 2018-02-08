@@ -1,0 +1,7 @@
+source_nvm: source $(brew --prefix nvm)/nvm.sh
+
+global_packages:
+  - eslint
+  - eslint-plugin-prettier
+  - eslint-config-prettier
+  - eslint-config-airbnb

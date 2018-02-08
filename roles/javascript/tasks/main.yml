@@ -1,0 +1,45 @@
+--- 
+- name: Install the latest stable version of Node.js
+  shell: "{{ source_nvm }} && nvm install stable"
+  register: nvm_install_result
+  changed_when: "'is already installed.' not in nvm_install_result.stderr"
+
+- name: Register current version of Node.js
+  shell: "{{ source_nvm }} && nvm current"
+  register: nvm_current_version
+  changed_when: false
+
+- name: Set the latest stable version of Node.js as the default
+  shell: "{{ source_nvm }} && nvm alias default node"
+  register: nvm_default_result
+  changed_when: nvm_current_version.stdout|string not in nvm_default_result.stdout
+
+- name: Install global packages
+  shell: "{{ source_nvm }} && npm install -g {{ item }}@latest"
+  with_items: "{{ global_packages }}"
+  register: install_global_packages_results
+  changed_when: "'updated 1 package' not in install_global_packages_results.stdout"
+
+- name: Discover the peer dependencies of global packages
+  shell: "{{ source_nvm }} && npm info {{ item }}@latest peerDependencies --json"
+  with_items: "{{ global_packages }}"
+  register: peer_dependencies_of_global_packages_as_json
+  loop_control:
+    label: "{{ item }}"
+  changed_when: false
+
+- name: Combine the peer dependencies of global packages into a dictionary
+  set_fact:
+    peer_dependencies_of_global_packages_dict: "{{ peer_dependencies_of_global_packages_dict|default({}) | combine ((item.stdout | from_json)) }}"
+  with_items: "{{ peer_dependencies_of_global_packages_as_json.results }}"
+  loop_control:
+    label: "{{ item.item }}{{ item.stdout }}"
+  when: item.stdout != ''
+
+- name: Install peer dependencies of global packages
+  shell: "{{ source_nvm }} && npm install -g {{ item.key }}@latest"
+  with_dict: "{{ peer_dependencies_of_global_packages_dict }}"
+  register: install_peer_dependencies_of_global_packages
+  changed_when: "'updated 1 package' not in install_peer_dependencies_of_global_packages.stdout"
+  loop_control:
+    label: "{{ item.key }}"

@@ -1,0 +1,6 @@
+---
+- name: Install PHP CS Fixer 
+  composer:
+    command: require
+    global_command: yes
+    arguments: friendsofphp/php-cs-fixer

@@ -4,3 +4,5 @@
     - { role: settings, tags: [ settings ] }
     - { role: apps, tags: [ apps ] }
     - { role: dock, tags: [ dock ] }
+    - { role: php, tags: [ php ] }
+    - { role: javascript, tags: [javascript, js] }
