@@ -1,13 +1,14 @@
-# macOS
+# macOS setup script
 
-<p style="text-align:center">
+<p align="center">
   <img 
     src="https://imgs.xkcd.com/comics/is_it_worth_the_time_2x.png" 
     alt="xkcd comic calculating how long you can spend on automating a routine before you're wasting your time"
     width="75%" 
-    style="box-shadow: 0 0 6px 0 rgba(0,0,0,0.35)"
   />
 </p>
+
+Configures macOS for web development and personal use
 
 ## Installation
 
@@ -51,4 +52,4 @@ After the install script has ran you will need to:
 - restore your SSH key or make a new one
 - add Bluetooth to the menu bar
 - add your [Sketch license](https://www.sketchapp.com/support/license-manager/)
-- enable the [Dracula theme for iTerm](https://draculatheme.com/iterm/) which is installed to ~/.iterm2/dracula
+- enable the [Dracula theme for iTerm](https://draculatheme.com/iterm/) which is installed to `~/.iterm2/dracula`
