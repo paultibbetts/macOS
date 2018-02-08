@@ -1,18 +1,13 @@
 #!/bin/sh
 
+# Variables
 user="${USER}"
-repo="https://gitlab.com/ptibbetts/laptop.git"
+repo="https://github.com/ptibbetts/macOS.git"
+install="$HOME/.macOS"
 
 # Text formatting
 bold=$(tput bold)
 normal=$(tput sgr0)
-
-fancy_echo() {
-  local fmt="$1"; shift
-
-  # shellcheck disable=SC2059
-  printf "\n$fmt\n" "$@"
-}
 
 echo() {
   printf "$1\n"
@@ -31,7 +26,8 @@ confirm() {
 }
 
 # Confirmation
-if ! confirm "Are you sure you wish to provision this machine? [Y\n]: "; then
+if ! confirm "Are you sure you want to do this? [y\N]: "; then
+  echo "Cancelling…"
   exit
 fi
 
@@ -55,40 +51,37 @@ else
   echo "${bold}Homebrew:${normal} Skipping, already installed."
 fi
 
-# Install Ansible (http://docs.ansible.com/intro_installation.html).
-#if ! command -v ansible >/dev/null; then
-#  echo "${bold}Ansible:${normal} Installing…
-#  brew install ansible
-#else
-#  echo "${bold}Ansible:${normal} Skipping, already installed."
-#fi
+# Install Git with Homebrew
+if ! command -v git >/dev/null; then
+  echo "${bold}Git:${normal} Installing…"
+  brew install git
+else
+  echo "${bold}Git:${normal} Skipping, already installed."
+fi
 
-# Download and install dotfiles
-#if [ -d "${HOME}/.dotfiles ]; then
-#  echo "${bold}Dotfiles:${normal} Skipping, already installed."
-#else
-#  echo "${bold}Dotfiles:{$normal} Installing…"
-#  git clone https://gitlab.com/ptibbetts/dotfiles.git ~/.dotfiles
-#  cd ~/.dotfiles/bin && ./install
-#fi
+# Install Ansible with Homebrew
+if ! command -v ansible >/dev/null; then
+ echo "${bold}Ansible:${normal} Installing…"
+ brew install ansible
+else
+ echo "${bold}Ansible:${normal} Skipping, already installed."
+fi
 
-# Clone the repository to the local drive
-#if [ -d "${HOME}/.laptop" ]; then
-#  echo "${bold}Playbook:${normal} Skipping, already installed."
-#else
-#  echo "${bold}Playbook:${normal} Cloning…"
-#  git clone $repo $HOME/.laptop
-#fi
-
-# Move to the install directory
-#cd $HOME/.laptop
+# Clone the repository to the local drive and cd into it
+if [ -d $install ]; then
+  echo "${bold}Playbook:${normal} Already installed, attempting to update…"
+  cd $install
+  git pull origin master
+else
+  echo "${bold}Playbook:${normal} Cloning…"
+  git clone $repo $install
+  cd $install
+fi
 
 echo "${bold}Ansible:${normal} Installing roles…"
-ansible-galaxy install -r requirements.yml
+ansible-galaxy install -r requirements.yml 
 
-echo "${bold}Running ansible playbook for user ${user}…${normal}"
+echo "${bold}Running ansible playbook for user ${user}…"
 ansible-playbook playbook.yml -e install_user=${user} -i hosts --ask-become-pass
 
-# Install Oh-My-ZSH
-echo "${bold}Oh-My-ZSH:${normal} Installing…"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+echo "${bold}Done!"
