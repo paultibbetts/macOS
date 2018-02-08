@@ -39,8 +39,8 @@ dock_apps:
   - name: Sequel Pro
     path: "/Applications/Sequel Pro.app"
     pos: 6
-  - name: SourceTree
-    path: "/Applications/SourceTree.app"
+  - name: Sourcetree
+    path: "/Applications/Sourcetree.app"
     pos: 7
   - name: Google Chrome Canary
     path: "/Applications/Google Chrome Canary.app"
