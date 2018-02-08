@@ -1,6 +1,6 @@
 ---
 - name: Restart macOS services
-  command: killall {{item}}
+  command: killall {{ item }}
   ignore_errors: yes
   with_items:
     - "Finder"

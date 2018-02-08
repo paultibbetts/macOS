@@ -1,9 +1,9 @@
 --- 
 - name: Configure macOS preferences
-  command: defaults write {{item.domain}} {{item.key}} {{item.value}}
-  with_items: "{{macos.config}}"
+  command: defaults write {{ item.domain }} {{ item.key }} {{ item.value }}
+  with_items: "{{ macos.config }}"
   become: true
-  become_user: "{{install_user}}"
+  become_user: "{{ install_user }}"
   notify: Restart macOS services
 
 - name: Enable macOS firewall
