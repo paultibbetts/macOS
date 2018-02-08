@@ -3,24 +3,25 @@ homebrew_taps:
   - caskroom/cask
   - caskroom/versions
   - caskroom/fonts
+  - homebrew/homebrew-php
 
 homebrew_installed_packages:
-  - git
-  - zsh
-  - zsh-completions
-  - vim
-  - wget
+  - composer
+  - coreutils			
   - curl
-  - yarn
   - dockutil
   - nvm
-  - coreutils			
   - packer
-  - terraform
   - python
   - python3
+  - terraform
   - thefuck
   - tree
+  - vim
+  - wget
+  - { name: yarn, install_options: "without-node" }
+  - zsh
+  - zsh-completions
 
 homebrew_cask_appdir: /Applications
 
@@ -28,64 +29,58 @@ homebrew_cask_apps:
   # fonts
   - font-source-code-pro
   # apps
+  - alfred
   - dropbox
   - filezilla
   - firefox
   - firefoxdeveloperedition
   - flux
+  - google-chrome-canary
   - iterm2
   - postman
   - rescuetime
+  - rocket
   - sequel-pro
   - sip
   - sketch
   - sketch-toolbox
   - slack
   - sourcetree
+  - torbrowser
   - transmission
   - vagrant
   - virtualbox
   - visual-studio-code
   - vlc
   # quick look
-  - betterzipql 
+  - betterzip 
   - qlcolorcode 
   - qlimagesize 
   - qlmarkdown 
-  - qlprettypatch 
   - qlstephen 
   - qlvideo
   - quicklook-csv 
   - quicklook-json 
   - suspicious-package 
-  - webpquicklook 
 
 mas_installed_apps:
-  - { id: 405399194, name: "Kindle"}
-  - { id: 405843582, name: "Alfred"}
-  - { id: 406056744, name: "Evernote"}
-  - { id: 409183694, name: "Keynote"}
-  - { id: 409201541, name: "Pages"}
-  - { id: 409203825, name: "Numbers"}
-  - { id: 410628904, name: "Wunderlist"}
-  - { id: 411246225, name: "Caffeine"}
-  - { id: 425424353, name: "The Unarchiver"}
   - { id: 443987910, name: "1Password"}
+  - { id: 409183694, name: "Keynote"}
+  - { id: 409203825, name: "Numbers"}
+  - { id: 409201541, name: "Pages"}
   - { id: 568494494, name: "Pocket"}
 
 mas_upgrade_all_apps: yes
 
-# code --list-extensions
 vscode_extensions:
-  - bmewburn.vscode-intelephen
+  - alexdima.copy-relative-path
   - bmewburn.vscode-intelephense-client
   - calebporzio.better-phpunit
-  - christian-kohler.npm-intellisense
   - cjhowe7.laravel-blade
-  - dbaeumer.vscode-eslint
   - dbaeumer.vscode-eslint
   - dracula-theme.theme-dracula
   - ecmel.vscode-html-css
+  - EditorConfig.editorconfig
   - HookyQR.beautify
   - junstyle.php-cs-fixer
   - mauve.terraform
@@ -94,9 +89,11 @@ vscode_extensions:
   - patbenatar.advanced-new-file
   - robertohuertasm.vscode-icons
   - ryannaddy.laravel-artisan
+  - sdras.vue-vscode-snippets
   - sleistner.vscode-fileutils
   - suyogsoti.todo-show
   - Tyriar.sort-lines
   - vscodevim.vim
   - wix.vscode-import-cost
-  - wwm.better-align
+  - xabikos.javascriptsnippets
+  - xabikos.reactsnippets

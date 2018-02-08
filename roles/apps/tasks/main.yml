@@ -1,6 +1,37 @@
 ---
+- name: Create NVM_DIR
+  file:
+    path: ~/.nvm
+    state: directory
+
+- name: Download Dracula theme for iTerm2
+  git:
+    repo: https://github.com/dracula/iterm.git
+    dest: ~/.iterm2/dracula
+
+- name: Download oh-my-zsh
+  git: 
+    repo: https://github.com/robbyrussell/oh-my-zsh 
+    dest: ~/.oh-my-zsh
+
+- name: Get zsh path
+  command: which zsh 
+  register: zsh_path
+
+- name: Switch to zsh
+  user: 
+    name: "{{ install_user }}"
+    shell: "{{ zsh_path.stdout }}"
+  become: true 
+
+- name: Install vim plugins
+  command: "vim -E -s -c \"source ~/.vimrc\" -c PlugInstall -c qa"
+  register: install_vim_plugins_result
+  changed_when: install_vim_plugins_result.rc != 1
+  failed_when: install_vim_plugins_result.rc != 1
+
 - name: Install VSCode extensions
   command: "/usr/local/bin/code --install-extension '{{ item }}'"
-  with_items: "{{vscode_extensions}}"
+  with_items: "{{ vscode_extensions }}"
   register: vscode_result
   changed_when: "'already installed' not in vscode_result.stdout"

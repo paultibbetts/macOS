@@ -1,8 +1,6 @@
 ---
 - hosts: localhost
   roles: 
-    - geerlingguy.homebrew
-    - apps
-    - geerlingguy.mas
     - dock
     - { role: settings, tags: [ settings ] }
+    - { role: apps, tags: [ apps ] }

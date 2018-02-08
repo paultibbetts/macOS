@@ -1,0 +1,5 @@
+---
+dependencies: 
+  - geerlingguy.homebrew
+  - geerlingguy.mas
+  - dotfiles

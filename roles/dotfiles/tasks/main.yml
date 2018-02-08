@@ -1,0 +1,7 @@
+---
+- name: Symlink VSCode user settings
+  file:
+    src: "{{ dotfiles_repo_local_destination }}/.vscode.json"
+    dest: "/Users/{{ install_user }}/Library/Application Support/Code/User/settings.json"
+    state: link
+    force: yes
